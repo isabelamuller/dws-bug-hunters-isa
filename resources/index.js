@@ -1,6 +1,6 @@
-import menu from "../src/index.js";
+import game from "../src/index.js";
 import run from "./main.js";
 
-run(menu).then(() => {
+run(game).then(() => {
   console.log("Finalizou");
 });

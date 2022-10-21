@@ -1,5 +1,5 @@
-const run = async (menu) => {
-  await menu();
+const run = async (game) => {
+  await game();
   process.stdin.pause();
 };
 
