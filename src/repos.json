@@ -1,1 +1,89 @@
-{"client":"Thunder Client","collectionName":"DWS Bug Hunters","dateExported":"2022-10-20T11:54:58.613Z","version":"1.1","folders":[],"requests":[{"_id":"81af6857-fb11-4d5e-86aa-ffa5af26d3c9","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Bugs","url":"https://ir39vnlo.directus.app/items/bugs","method":"GET","sortNum":10000,"created":"2022-10-18T18:22:17.305Z","modified":"2022-10-18T18:22:17.305Z","headers":[],"params":[],"tests":[]},{"_id":"624cb652-3bec-438e-afea-7a9f81908258","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Tasks","url":"https://ir39vnlo.directus.app/items/tasks","method":"GET","sortNum":20000,"created":"2022-10-18T18:22:17.307Z","modified":"2022-10-18T18:22:17.307Z","headers":[],"params":[],"tests":[]},{"_id":"a963339b-f234-41e5-9ca2-c0ef23252291","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Factions","url":"https://ir39vnlo.directus.app/items/factions","method":"GET","sortNum":30000,"created":"2022-10-18T18:22:17.308Z","modified":"2022-10-18T18:22:17.308Z","headers":[],"params":[],"tests":[]},{"_id":"48aa93d2-3705-4fbf-8842-1bb65bdefa80","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Equipments","url":"https://ir39vnlo.directus.app/items/equipments","method":"GET","sortNum":40000,"created":"2022-10-18T18:22:17.309Z","modified":"2022-10-18T18:22:17.309Z","headers":[],"params":[],"tests":[]},{"_id":"8828ade3-3e40-488e-8a8e-cc402934f7ec","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Characters","url":"https://ir39vnlo.directus.app/items/characters?fields=*,equipments.equipments_id.*,factions.factions_id.*","method":"GET","sortNum":50000,"created":"2022-10-18T18:22:17.310Z","modified":"2022-10-18T18:22:17.310Z","headers":[],"params":[{"name":"fields","value":"*,equipments.equipments_id.*,factions.factions_id.*","isPath":false}],"tests":[]},{"_id":"cd4ffda7-0b00-4ba8-852e-ce6f96c46b2f","colId":"ca97aab1-e5bf-4d11-822a-3e350ae0de48","containerId":"","name":"Create Character","url":"https://ir39vnlo.directus.app/items/characters?fields=*,equipments.equipments_id.*,factions.factions_id.*","method":"POST","sortNum":60000,"created":"2022-10-18T18:22:17.311Z","modified":"2022-10-20T11:52:19.825Z","headers":[{"name":"Authorization","value":"kxiMBr7Cjiwm4bHTJS8wc4wFFT7IPQ83"}],"params":[{"name":"fields","value":"*,equipments.equipments_id.*,factions.factions_id.*","isPath":false}],"body":{"type":"json","raw":" {\n      \"atk\": 10,\n      \"def\": 10,\n      \"agi\": 10,\n      \"hp\": 10,\n      \"gold\": 100,\n      \"name\": \"Teste\",\n      \"factions\": [\n        {\n          \"factions_id\": {\n            \"id\": 2,\n            \"name\": \"Backend\"\n          }\n        }\n      ],\n      \"equipments\": [\n        {\n          \"equipments_id\": {\n            \"id\": 4,\n            \"name\": \"Excalibug\",\n            \"affected_attribute\": \"atk\",\n            \"affected_amount\": 50,\n            \"value\": 5000\n          }\n        }\n      ]\n    }","form":[]},"tests":[]}]}
+{
+    "client": "Thunder Client",
+    "collectionName": "dws-bug-hunters-api",
+    "dateExported": "2022-11-03T14:52:35.716Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3d20693e-e03c-47e2-8d98-5deb861eb019",
+            "colId": "3a1379f2-1334-4531-9067-b1237115c41f",
+            "containerId": "",
+            "name": "localhost:3000/api/equipment",
+            "url": "localhost:3000/api/equipment",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2022-11-03T14:51:44.252Z",
+            "modified": "2022-11-03T14:51:44.252Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6accbdf1-d048-4d0f-bdfe-550afaa1c6d2",
+            "colId": "3a1379f2-1334-4531-9067-b1237115c41f",
+            "containerId": "",
+            "name": "localhost:3000/api/factions",
+            "url": "localhost:3000/api/factions",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2022-11-03T14:51:50.195Z",
+            "modified": "2022-11-03T14:51:50.195Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "893cf1fe-e14b-4a9f-981b-d279ebdcbf43",
+            "colId": "3a1379f2-1334-4531-9067-b1237115c41f",
+            "containerId": "",
+            "name": "localhost:3000/api/characters",
+            "url": "localhost:3000/api/characters",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2022-11-03T14:51:54.852Z",
+            "modified": "2022-11-03T14:51:54.852Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"id\": \"byk8FtdF93QmFH6itUec\",\n    \"def\": 12,\n    \"agi\": 12,\n    \"hp\": 100,\n    \"factions\": [\n        {\n            \"id\": \"2eTLVAA9fglGLYZR7Fli\",\n            \"name\": \"Frontend\"\n        }\n    ],\n    \"atk\": 12\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b81fa424-9342-4353-9055-bc5ed7448023",
+            "colId": "3a1379f2-1334-4531-9067-b1237115c41f",
+            "containerId": "",
+            "name": "localhost:3000/api/characters",
+            "url": "localhost:3000/api/characters",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2022-11-03T14:52:00.652Z",
+            "modified": "2022-11-03T14:52:00.652Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Winota, Coder Excellent\",\n    \"def\": 15,\n    \"agi\": 15,\n    \"hp\": 100,\n    \"factions\": [\n        {\n            \"id\": \"2eTLVAA9fglGLYZR7Fli\",\n            \"name\": \"Frontend\"\n        }\n    ],\n    \"atk\": 15,\n    \"gold\": 500,\n    \"equipment\": [\n        {\n            \"id\": \"TzWiKcIEbBadwqAZP3CB\",\n            \"name\": \"RGB Mechanical Keyboard\",\n            \"affected_attribute\": \"agi\",\n            \"value\": 700,\n            \"affected_amount\": 10\n        }\n    ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e8001254-9598-4f1d-8317-883838a19be4",
+            "colId": "3a1379f2-1334-4531-9067-b1237115c41f",
+            "containerId": "",
+            "name": "localhost:3000/api/characters",
+            "url": "localhost:3000/api/characters",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2022-11-03T14:52:04.647Z",
+            "modified": "2022-11-03T14:52:04.647Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
