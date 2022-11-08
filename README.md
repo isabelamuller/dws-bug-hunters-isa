@@ -9,7 +9,7 @@
 
 ![image](https://user-images.githubusercontent.com/94134546/200638736-1aa7d59a-bfa0-4fad-95de-9e6bf313ee62.png)<br/>
 ↳ Menu de escolha inicial.<br/><br/>
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 ![image](https://user-images.githubusercontent.com/94134546/200639551-2a8e5140-0419-4c66-86cd-8bd713f5a2bf.png)<br/>
 ↳ Criação do personagem.
 <br/><br/>
