@@ -144,14 +144,12 @@ const game = async () => {
                 "equipment": []
               }
             )
-            // .then(response => console.log(response));
           } catch (error) {
             console.log('deu erro', error);
-          }
-          // await menu();
+          };
         }
         postCharacter();
-        await menu()
+        await menu();
       } else if (areYouSure === 2) {
         console.log('\nVocê será redirecionado ao menu!');
         await new Promise(resolve => setTimeout(resolve, 1500));
@@ -167,7 +165,7 @@ const game = async () => {
 
   const selectCharacter = async () => {
     let inputCharacterName;
-
+    characters = await requestCharacters();
     const getInputCharacterName = async () => {
       console.log('\n─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───\n');
       inputCharacterName = await read("✎ Insira o \x1B[1mnome\x1B[0m do personagem que você quer selecionar: ");
@@ -177,6 +175,7 @@ const game = async () => {
     const findCharacterByName = async () => { // ERRO NUMERO 2: resolvido
       await getInputCharacterName();
       let findCharacter;
+       
       findCharacter = characters.find(elem => elem.name === inputCharacterName);
       while (findCharacter === undefined) {
         console.log('\n\x1B[1;31mERRO:\x1B[0m \x1B[0mPersonagem não encontrado, tente novamente.\x1B[0m');
@@ -266,23 +265,17 @@ const game = async () => {
               await axios.patch(`https://dws-bug-hunters-api.vercel.app/api/characters/`, { atk: characterObject.atk, id: characterObject.id });
               break;
             case 'def':
-              console.log('def antes do patch', characterObject.def)
               characterObject.def = characterObject.def + getItem.affected_amount;
               await axios.patch(`https://dws-bug-hunters-api.vercel.app/api/characters/`, { def: characterObject.def, id: characterObject.id });
-              console.log('def dps do patch', characterObject.def)
               break;
             case 'agi':
-              console.log('agi antes do patch', characterObject.agi)
               characterObject.agi = characterObject.agi + getItem.affected_amount;
               await axios.patch(`https://dws-bug-hunters-api.vercel.app/api/characters/`, { agi: characterObject.agi, id: characterObject.id });
-              console.log('agi dps do patch', characterObject.agi)
               break;
             case 'hp':
               characterObject.hp = characterObject.hp + getItem.affected_amount;
               await axios.patch(`https://dws-bug-hunters-api.vercel.app/api/characters/`, { hp: characterObject.hp, id: characterObject.id });
               break;
-            default:
-              console.log('MEU DEUS')
           }
           await store();
         }
@@ -318,7 +311,7 @@ const game = async () => {
 
         if (questBugObject == undefined || !questBugObject.hasOwnProperty('agi')) {
           console.log('\n─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───');
-          console.log(`\n\x1B[1;32m✯ VITÓRIA (mais ou menos...)!\x1B[0m \x1B[0;32mVocê encontrou uma quest sem bugs e ganhou, sem esforço algum, ${questObject.reward} mangos. \x1B[1mAgradeça ao Thales. ✯\x1B[0m`);
+          console.log(`\n\x1B[1;32m✯ VITÓRIA (mais ou menos...)!\x1B[0m \x1B[0;32mVocê encontrou uma quest sem bugs e ganhou, sem esforço algum, ${questObject.reward} mangos.`);
           console.log('\n─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ────── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───');
           characterObject.gold = questObject.reward + characterObject.gold
           await axios.patch(`https://dws-bug-hunters-api.vercel.app/api/characters`, { gold: characterObject.gold, id: characterObject.id })
@@ -340,8 +333,6 @@ const game = async () => {
         const battleStart = async () => {
 
           if (characterObject.agi >= questBugObject.agi) {
-            console.log('def do perso', characterObject.def)
-            console.log('atk do bug', questBugObject.atk)
             console.log('Você vai atacar!\n');
             while (characterObject.hp > 0 && questBugObject.hp > 0) { // chega ate o negativo, dai para.
               await new Promise(resolve => setTimeout(resolve, 1000));
