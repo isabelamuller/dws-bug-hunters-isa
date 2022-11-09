@@ -130,10 +130,10 @@ const game = async () => {
               `https://dws-bug-hunters-api.vercel.app/api/characters`,
               {
                 "name": characterName,
-                "def": 20,
+                "def": 5,
                 "agi": 20,
-                "atk": 20,
-                "hp": 30,
+                "atk": 10,
+                "hp": 10,
                 "gold": 20,
                 "factions": [
                   {
