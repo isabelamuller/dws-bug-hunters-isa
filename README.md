@@ -1,6 +1,6 @@
 # DWS Bug Hunters 🐛
 
-✩ Little project I made during my internship at Dentsu World Services. ✩<br/>
+✩ Little project I made during my internship at Dentsu World Services. ✩<br/><br/>
 ⋆ It's basically a console game, RPG style, in which consists on creating a character and/or choosing an existing character and completing the quests, killing the bugs in which one of them. <br/>
 ⋆ To do so, the player can access a little store so they can buy items to increase their agility, attack, defense and/or HP. <br/>
 ⋆ If the character wins the battle, they receive a gold reward and their HP isn't reset. <br/>
